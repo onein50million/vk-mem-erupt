@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use ash;
+use erupt;
 #[cfg(feature = "failure")]
 use failure::{Backtrace, Context, Fail};
 #[cfg(not(feature = "failure"))]
@@ -33,7 +33,7 @@ impl Error {
         &self.kind
     }
 
-    pub fn vulkan(result: ash::vk::Result) -> Error {
+    pub fn vulkan(result: erupt::vk::Result) -> Error {
         Error::from(ErrorKind::Vulkan(result))
     }
 
@@ -96,7 +96,7 @@ impl fmt::Display for Error {
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub enum ErrorKind {
     /// An error that occurred while interacting with Vulkan
-    Vulkan(ash::vk::Result),
+    Vulkan(erupt::vk::Result),
 
     /// An error that occurred while accessing or allocating memory
     Memory(String),

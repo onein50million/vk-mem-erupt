@@ -1,4 +1,4 @@
-extern crate ash;
+extern crate erupt;
 extern crate vk_mem;
 
 /*
