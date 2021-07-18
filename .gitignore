@@ -1,3 +1,7 @@
 /target
 **/*.rs.bk
 Cargo.lock
+/.idea/.gitignore
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/vk-mem-rs.iml

@@ -25,9 +25,9 @@ fn extension_names() -> Vec<*const i8> {
 // }
 
 pub struct TestHarness {
-    pub entry: erupt::EntryLoader,
-    pub instance: Arc<erupt::InstanceLoader>,
     pub device: Arc<erupt::DeviceLoader>,
+    pub instance: Arc<erupt::InstanceLoader>,
+    pub entry: erupt::EntryLoader,
     pub physical_device: erupt::vk::PhysicalDevice,
     //pub debug_callback: erupt::vk::DebugReportCallbackEXT,
     //pub debug_report_loader: erupt::extensions::ext_debug_report::DebugReport,
@@ -144,8 +144,8 @@ impl TestHarness {
     pub fn create_allocator(&self) -> vk_mem::Allocator {
         let create_info = vk_mem::AllocatorCreateInfo {
             physical_device: self.physical_device,
-            device: self.device.clone(),
-            instance: self.instance.clone(),
+            device: Arc::clone(&self.device),
+            instance: Arc::clone(&self.instance),
             flags: Default::default(),
             preferred_large_heap_block_size: 0,
             frame_in_use_count: 0,

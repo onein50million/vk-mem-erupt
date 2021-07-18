@@ -18,14 +18,12 @@ use std::sync::Arc;
 pub struct Allocator {
     /// Pointer to internal VmaAllocator instance
     pub(crate) internal: ffi::VmaAllocator,
-
-    /// Vulkan instance handle
-    #[allow(dead_code)]
-    pub(crate) instance: Arc<erupt::InstanceLoader>,
-
     /// Vulkan device handle
     #[allow(dead_code)]
     pub(crate) device: Arc<erupt::DeviceLoader>,
+    /// Vulkan instance handle
+    #[allow(dead_code)]
+    pub(crate) instance: Arc<erupt::InstanceLoader>,
 }
 
 // Allocator is internally thread safe unless AllocatorCreateFlags::EXTERNALLY_SYNCHRONIZED is used (then you need to add synchronization!)
