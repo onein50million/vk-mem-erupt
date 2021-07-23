@@ -5,3 +5,4 @@ Cargo.lock
 /.idea/modules.xml
 /.idea/vcs.xml
 /.idea/vk-mem-rs.iml
+**/.vscode/

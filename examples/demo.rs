@@ -1,5 +1,5 @@
 extern crate erupt;
-extern crate vk_mem;
+extern crate vk_mem_erupt;
 
 /*
 use ash::extensions::DebugReport;

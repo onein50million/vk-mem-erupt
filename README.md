@@ -1,4 +1,4 @@
-vk-mem
+vk-mem-erupt
 ========
 
 [![vk-mem on travis-ci.com](https://travis-ci.com/gwihlidal/vk-mem-rs.svg?branch=master)](https://travis-ci.com/gwihlidal/vk-mem-rs)
@@ -7,6 +7,8 @@ vk-mem
 [![Lines of Code](https://tokei.rs/b1/github/gwihlidal/vk-mem-rs)](https://github.com/gwihlidal/vk-mem-rs)
 ![MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 ![APACHE2](https://img.shields.io/badge/license-APACHE2-blue.svg)
+
+*** This is a fork of Graham Wihlidal's vk-mem-rs, but using erupt instead of ash for Vulkan bindings ***
 
 This crate provides an FFI layer and idiomatic rust wrappers for the excellent AMD Vulkan Memory Allocator (VMA) C/C++ library.
 
