@@ -1147,7 +1147,7 @@ pub const VkStructureType_VK_STRUCTURE_TYPE_DEVICE_MEMORY_OPAQUE_CAPTURE_ADDRESS
 pub const VkStructureType_VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_QUERY_RESET_FEATURES_EXT:
     VkStructureType = 1000261000;
 pub const VkStructureType_VK_STRUCTURE_TYPE_MAX_ENUM: VkStructureType = 2147483647;
-pub type VkStructureType = i32;
+pub type VkStructureType = u32;
 pub const VkImageLayout_VK_IMAGE_LAYOUT_UNDEFINED: VkImageLayout = 0;
 pub const VkImageLayout_VK_IMAGE_LAYOUT_GENERAL: VkImageLayout = 1;
 pub const VkImageLayout_VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL: VkImageLayout = 2;
@@ -1183,7 +1183,7 @@ pub const VkImageLayout_VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_OPTIMAL_KHR: VkImageLayo
 pub const VkImageLayout_VK_IMAGE_LAYOUT_STENCIL_ATTACHMENT_OPTIMAL_KHR: VkImageLayout = 1000241002;
 pub const VkImageLayout_VK_IMAGE_LAYOUT_STENCIL_READ_ONLY_OPTIMAL_KHR: VkImageLayout = 1000241003;
 pub const VkImageLayout_VK_IMAGE_LAYOUT_MAX_ENUM: VkImageLayout = 2147483647;
-pub type VkImageLayout = i32;
+pub type VkImageLayout = u32;
 pub const VkSystemAllocationScope_VK_SYSTEM_ALLOCATION_SCOPE_COMMAND: VkSystemAllocationScope = 0;
 pub const VkSystemAllocationScope_VK_SYSTEM_ALLOCATION_SCOPE_OBJECT: VkSystemAllocationScope = 1;
 pub const VkSystemAllocationScope_VK_SYSTEM_ALLOCATION_SCOPE_CACHE: VkSystemAllocationScope = 2;
@@ -1191,12 +1191,12 @@ pub const VkSystemAllocationScope_VK_SYSTEM_ALLOCATION_SCOPE_DEVICE: VkSystemAll
 pub const VkSystemAllocationScope_VK_SYSTEM_ALLOCATION_SCOPE_INSTANCE: VkSystemAllocationScope = 4;
 pub const VkSystemAllocationScope_VK_SYSTEM_ALLOCATION_SCOPE_MAX_ENUM: VkSystemAllocationScope =
     2147483647;
-pub type VkSystemAllocationScope = i32;
+pub type VkSystemAllocationScope = u32;
 pub const VkInternalAllocationType_VK_INTERNAL_ALLOCATION_TYPE_EXECUTABLE:
     VkInternalAllocationType = 0;
 pub const VkInternalAllocationType_VK_INTERNAL_ALLOCATION_TYPE_MAX_ENUM: VkInternalAllocationType =
     2147483647;
-pub type VkInternalAllocationType = i32;
+pub type VkInternalAllocationType = u32;
 pub const VkFormat_VK_FORMAT_UNDEFINED: VkFormat = 0;
 pub const VkFormat_VK_FORMAT_R4G4_UNORM_PACK8: VkFormat = 1;
 pub const VkFormat_VK_FORMAT_R4G4B4A4_UNORM_PACK16: VkFormat = 2;
@@ -1479,28 +1479,28 @@ pub const VkFormat_VK_FORMAT_G16_B16_R16_3PLANE_422_UNORM_KHR: VkFormat = 100015
 pub const VkFormat_VK_FORMAT_G16_B16R16_2PLANE_422_UNORM_KHR: VkFormat = 1000156032;
 pub const VkFormat_VK_FORMAT_G16_B16_R16_3PLANE_444_UNORM_KHR: VkFormat = 1000156033;
 pub const VkFormat_VK_FORMAT_MAX_ENUM: VkFormat = 2147483647;
-pub type VkFormat = i32;
+pub type VkFormat = u32;
 pub const VkImageTiling_VK_IMAGE_TILING_OPTIMAL: VkImageTiling = 0;
 pub const VkImageTiling_VK_IMAGE_TILING_LINEAR: VkImageTiling = 1;
 pub const VkImageTiling_VK_IMAGE_TILING_DRM_FORMAT_MODIFIER_EXT: VkImageTiling = 1000158000;
 pub const VkImageTiling_VK_IMAGE_TILING_MAX_ENUM: VkImageTiling = 2147483647;
-pub type VkImageTiling = i32;
+pub type VkImageTiling = u32;
 pub const VkImageType_VK_IMAGE_TYPE_1D: VkImageType = 0;
 pub const VkImageType_VK_IMAGE_TYPE_2D: VkImageType = 1;
 pub const VkImageType_VK_IMAGE_TYPE_3D: VkImageType = 2;
 pub const VkImageType_VK_IMAGE_TYPE_MAX_ENUM: VkImageType = 2147483647;
-pub type VkImageType = i32;
+pub type VkImageType = u32;
 pub const VkPhysicalDeviceType_VK_PHYSICAL_DEVICE_TYPE_OTHER: VkPhysicalDeviceType = 0;
 pub const VkPhysicalDeviceType_VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU: VkPhysicalDeviceType = 1;
 pub const VkPhysicalDeviceType_VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU: VkPhysicalDeviceType = 2;
 pub const VkPhysicalDeviceType_VK_PHYSICAL_DEVICE_TYPE_VIRTUAL_GPU: VkPhysicalDeviceType = 3;
 pub const VkPhysicalDeviceType_VK_PHYSICAL_DEVICE_TYPE_CPU: VkPhysicalDeviceType = 4;
 pub const VkPhysicalDeviceType_VK_PHYSICAL_DEVICE_TYPE_MAX_ENUM: VkPhysicalDeviceType = 2147483647;
-pub type VkPhysicalDeviceType = i32;
+pub type VkPhysicalDeviceType = u32;
 pub const VkSharingMode_VK_SHARING_MODE_EXCLUSIVE: VkSharingMode = 0;
 pub const VkSharingMode_VK_SHARING_MODE_CONCURRENT: VkSharingMode = 1;
 pub const VkSharingMode_VK_SHARING_MODE_MAX_ENUM: VkSharingMode = 2147483647;
-pub type VkSharingMode = i32;
+pub type VkSharingMode = u32;
 pub type VkImageCreateFlags = VkFlags;
 pub const VkSampleCountFlagBits_VK_SAMPLE_COUNT_1_BIT: VkSampleCountFlagBits = 1;
 pub const VkSampleCountFlagBits_VK_SAMPLE_COUNT_2_BIT: VkSampleCountFlagBits = 2;
@@ -1511,7 +1511,7 @@ pub const VkSampleCountFlagBits_VK_SAMPLE_COUNT_32_BIT: VkSampleCountFlagBits = 
 pub const VkSampleCountFlagBits_VK_SAMPLE_COUNT_64_BIT: VkSampleCountFlagBits = 64;
 pub const VkSampleCountFlagBits_VK_SAMPLE_COUNT_FLAG_BITS_MAX_ENUM: VkSampleCountFlagBits =
     2147483647;
-pub type VkSampleCountFlagBits = i32;
+pub type VkSampleCountFlagBits = u32;
 pub type VkSampleCountFlags = VkFlags;
 pub type VkImageUsageFlags = VkFlags;
 pub type VkMemoryHeapFlags = VkFlags;
@@ -1911,6 +1911,7 @@ pub type PFN_vkCmdCopyBuffer = ::std::option::Option<
         pRegions: *const VkBufferCopy,
     ),
 >;
+pub type VkExternalMemoryHandleTypeFlags = VkFlags;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct VkBindBufferMemoryInfo {
@@ -1963,6 +1964,7 @@ pub type PFN_vkGetPhysicalDeviceMemoryProperties2KHR = ::std::option::Option<
         pMemoryProperties: *mut VkPhysicalDeviceMemoryProperties2,
     ),
 >;
+pub type VkExternalMemoryHandleTypeFlagsKHR = VkExternalMemoryHandleTypeFlags;
 pub type PFN_vkGetImageMemoryRequirements2KHR = ::std::option::Option<
     unsafe extern "C" fn(
         device: VkDevice,
@@ -2158,6 +2160,15 @@ pub struct VmaAllocatorCreateInfo {
     #[doc = "Only versions 1.0, 1.1, 1.2 are supported by the current implementation."]
     #[doc = "Leaving it initialized to zero is equivalent to `VK_API_VERSION_1_0`."]
     pub vulkanApiVersion: u32,
+    #[doc = " \\brief Either null or a pointer to an array of external memory handle types for each Vulkan memory type."]
+    #[doc = ""]
+    #[doc = "If not NULL, it must be a pointer to an array of `VkPhysicalDeviceMemoryProperties::memoryTypeCount`"]
+    #[doc = "elements, defining external memory handle types of particular Vulkan memory type,"]
+    #[doc = "to be passed using `VkExportMemoryAllocateInfoKHR`."]
+    #[doc = ""]
+    #[doc = "Any of the elements may be equal to 0, which means not to use `VkExportMemoryAllocateInfoKHR` on this memory type."]
+    #[doc = "This is also the default in case of `pTypeExternalMemoryHandleTypes` = NULL."]
+    pub pTypeExternalMemoryHandleTypes: *const VkExternalMemoryHandleTypeFlagsKHR,
 }
 extern "C" {
     #[doc = " Creates Allocator object."]
@@ -2402,7 +2413,7 @@ pub const VmaMemoryUsage_VMA_MEMORY_USAGE_MAX_ENUM: VmaMemoryUsage = 2147483647;
 #[doc = "Call function vmaDestroyPool() to destroy it."]
 #[doc = ""]
 #[doc = "For more information see [Custom memory pools](@ref choosing_memory_type_custom_memory_pools)."]
-pub type VmaMemoryUsage = i32;
+pub type VmaMemoryUsage = u32;
 pub type VmaAllocationCreateFlags = VkFlags;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -3380,6 +3391,22 @@ extern "C" {
         allocator: VmaAllocator,
         pBufferCreateInfo: *const VkBufferCreateInfo,
         pAllocationCreateInfo: *const VmaAllocationCreateInfo,
+        pBuffer: *mut VkBuffer,
+        pAllocation: *mut VmaAllocation,
+        pAllocationInfo: *mut VmaAllocationInfo,
+    ) -> VkResult;
+}
+extern "C" {
+    #[doc = " \\brief Creates a buffer with additional minimum alignment."]
+    #[doc = ""]
+    #[doc = "Similar to vmaCreateBuffer() but provides additional parameter `minAlignment` which allows to specify custom,"]
+    #[doc = "minimum alignment to be used when placing the buffer inside a larger memory block, which may be needed e.g."]
+    #[doc = "for interop with OpenGL."]
+    pub fn vmaCreateBufferWithAlignment(
+        allocator: VmaAllocator,
+        pBufferCreateInfo: *const VkBufferCreateInfo,
+        pAllocationCreateInfo: *const VmaAllocationCreateInfo,
+        minAlignment: VkDeviceSize,
         pBuffer: *mut VkBuffer,
         pAllocation: *mut VmaAllocation,
         pAllocationInfo: *mut VmaAllocationInfo,

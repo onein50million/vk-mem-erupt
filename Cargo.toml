@@ -16,7 +16,7 @@ include = [
     "gen/bindings.rs",
     "build.rs",
     "Cargo.toml",
-    "vendor/src/vk_mem_alloc.h",
+    "vendor/include/vk_mem_alloc.h",
     "wrapper/vulkan/vk_platform.h",
     "wrapper/vulkan/vulkan_core.h",
     "wrapper/vulkan/vulkan.h",

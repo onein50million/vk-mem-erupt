@@ -866,25 +866,20 @@ impl Allocator {
                     _,
                     ffi::PFN_vkGetPhysicalDeviceProperties,
                 >(
-                    instance.get_physical_device_properties,
+                    instance.get_physical_device_properties
                 ),
                 vkGetPhysicalDeviceMemoryProperties: mem::transmute::<
                     _,
                     ffi::PFN_vkGetPhysicalDeviceMemoryProperties,
                 >(
-                    instance.get_physical_device_memory_properties),
+                    instance.get_physical_device_memory_properties,
+                ),
                 vkAllocateMemory: mem::transmute::<_, ffi::PFN_vkAllocateMemory>(
                     device.allocate_memory,
                 ),
-                vkFreeMemory: mem::transmute::<_, ffi::PFN_vkFreeMemory>(
-                    device.free_memory,
-                ),
-                vkMapMemory: mem::transmute::<_, ffi::PFN_vkMapMemory>(
-                    device.map_memory,
-                ),
-                vkUnmapMemory: mem::transmute::<_, ffi::PFN_vkUnmapMemory>(
-                    device.unmap_memory,
-                ),
+                vkFreeMemory: mem::transmute::<_, ffi::PFN_vkFreeMemory>(device.free_memory),
+                vkMapMemory: mem::transmute::<_, ffi::PFN_vkMapMemory>(device.map_memory),
+                vkUnmapMemory: mem::transmute::<_, ffi::PFN_vkUnmapMemory>(device.unmap_memory),
                 vkFlushMappedMemoryRanges: mem::transmute::<_, ffi::PFN_vkFlushMappedMemoryRanges>(
                     device.flush_mapped_memory_ranges,
                 ),
@@ -892,7 +887,7 @@ impl Allocator {
                     _,
                     ffi::PFN_vkInvalidateMappedMemoryRanges,
                 >(
-                    device.invalidate_mapped_memory_ranges,
+                    device.invalidate_mapped_memory_ranges
                 ),
                 vkBindBufferMemory: mem::transmute::<_, ffi::PFN_vkBindBufferMemory>(
                     device.bind_buffer_memory,
@@ -910,26 +905,20 @@ impl Allocator {
                     _,
                     ffi::PFN_vkGetBufferMemoryRequirements,
                 >(
-                    device.get_buffer_memory_requirements,
+                    device.get_buffer_memory_requirements
                 ),
                 vkGetImageMemoryRequirements: mem::transmute::<
                     _,
                     ffi::PFN_vkGetImageMemoryRequirements,
                 >(
-                    device.get_image_memory_requirements,
+                    device.get_image_memory_requirements
                 ),
-                vkCreateBuffer: mem::transmute::<_, ffi::PFN_vkCreateBuffer>(
-                    device.create_buffer,
-                ),
+                vkCreateBuffer: mem::transmute::<_, ffi::PFN_vkCreateBuffer>(device.create_buffer),
                 vkDestroyBuffer: mem::transmute::<_, ffi::PFN_vkDestroyBuffer>(
                     device.destroy_buffer,
                 ),
-                vkCreateImage: mem::transmute::<_, ffi::PFN_vkCreateImage>(
-                    device.create_image,
-                ),
-                vkDestroyImage: mem::transmute::<_, ffi::PFN_vkDestroyImage>(
-                    device.destroy_image,
-                ),
+                vkCreateImage: mem::transmute::<_, ffi::PFN_vkCreateImage>(device.create_image),
+                vkDestroyImage: mem::transmute::<_, ffi::PFN_vkDestroyImage>(device.destroy_image),
                 vkCmdCopyBuffer: mem::transmute::<_, ffi::PFN_vkCmdCopyBuffer>(
                     device.cmd_copy_buffer,
                 ),
@@ -937,13 +926,13 @@ impl Allocator {
                     _,
                     ffi::PFN_vkGetBufferMemoryRequirements2KHR,
                 >(
-                    device.get_buffer_memory_requirements2,
+                    device.get_buffer_memory_requirements2
                 ),
                 vkGetImageMemoryRequirements2KHR: mem::transmute::<
                     _,
                     ffi::PFN_vkGetImageMemoryRequirements2KHR,
                 >(
-                    device.get_image_memory_requirements2,
+                    device.get_image_memory_requirements2
                 ),
                 // TODO:
                 vkGetPhysicalDeviceMemoryProperties2KHR: None,
@@ -970,7 +959,8 @@ impl Allocator {
             pAllocationCallbacks: ::std::ptr::null(), // TODO: Add support
             pDeviceMemoryCallbacks: ::std::ptr::null(), // TODO: Add support
             pRecordSettings: ::std::ptr::null(),      // TODO: Add support
-            vulkanApiVersion: 0,                      // TODO: Make configurable
+            vulkanApiVersion: 0,
+            pTypeExternalMemoryHandleTypes: ::std::ptr::null(), // TODO: Make configurable
         };
         let mut internal: ffi::VmaAllocator = unsafe { mem::zeroed() };
         let result = ffi_to_result(unsafe {
@@ -1837,7 +1827,11 @@ impl Allocator {
     /// (which is illegal in Vulkan).
     ///
     /// It is recommended to use function `Allocator::create_image` instead of this one.
-    pub fn bind_image_memory(&self, image: erupt::vk::Image, allocation: &Allocation) -> Result<()> {
+    pub fn bind_image_memory(
+        &self,
+        image: erupt::vk::Image,
+        allocation: &Allocation,
+    ) -> Result<()> {
         let result = ffi_to_result(unsafe {
             ffi::vmaBindImageMemory(
                 self.internal,
@@ -1956,11 +1950,9 @@ impl Allocator {
             )
         });
         match result {
-            erupt::vk::Result::SUCCESS => Ok((
-                erupt::vk::Image(image as u64),
-                allocation,
-                allocation_info,
-            )),
+            erupt::vk::Result::SUCCESS => {
+                Ok((erupt::vk::Image(image as u64), allocation, allocation_info))
+            }
             _ => Err(Error::vulkan(result)),
         }
     }
